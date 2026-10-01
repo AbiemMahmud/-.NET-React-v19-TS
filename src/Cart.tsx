@@ -16,7 +16,7 @@ export default function Cart({ cart, checkout }: Props) {
     total += current.pizza.sizes[current.size];
   }
   return (
-    <div className="cart">
+    <div className="border-t border-border p-3.75 text-center leading-normal lg:border-t-0 lg:border-l">
       <h2>Cart</h2>
       <ul>
         {cart.map((item, index) => (
@@ -27,8 +27,10 @@ export default function Cart({ cart, checkout }: Props) {
           </li>
         ))}
       </ul>
-      <p>Total: {intl.format(total)}</p>
-      <button onClick={checkout}>Checkout</button>
+      <p className="my-3.75">Total: {intl.format(total)}</p>
+      <button className="btn" onClick={checkout}>
+        Checkout
+      </button>
     </div>
   );
 }
